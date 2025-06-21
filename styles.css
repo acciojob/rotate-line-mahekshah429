@@ -1,1 +1,17 @@
-/*  your css code here. If applicable */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+#line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 2px;
+  background-color: #000;
+  transform-origin: center;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
