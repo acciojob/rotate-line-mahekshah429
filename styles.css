@@ -1,8 +1,9 @@
 body {
   margin: 0;
+  padding: 0;
   height: 100vh;
   background-color: #f5f5f5;
-  position: relative;
+  position: relative; /* important for absolute child */
 }
 
 #line {
@@ -13,7 +14,7 @@ body {
   height: 2px;
   background-color: black;
   transform-origin: center center;
-  animation: rotate 2s linear infinite;
+  animation: rotate 1s linear infinite;
 }
 
 @keyframes rotate {

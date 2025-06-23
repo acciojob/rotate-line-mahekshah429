@@ -1,13 +1,13 @@
-const line = document.getElementById("line");
+cy.get('#line')
+  .should('have.css', 'position', 'absolute')
+  .and('have.css', 'width', '200px')
+  .and('have.css', 'height', '2px')
+  .and('have.css', 'background-color', 'rgb(0, 0, 0)');
 
-// Example: Pause rotation on click, resume on second click
-let isRotating = true;
-
-line.addEventListener("click", () => {
-  if (isRotating) {
-    line.style.animationPlayState = "paused";
-  } else {
-    line.style.animationPlayState = "running";
-  }
-  isRotating = !isRotating;
+cy.get('#line').then($el => {
+  const start = $el.css('transform');
+  cy.wait(500).then(() => {
+    const after = $el.css('transform');
+    expect(after).not.to.equal(start);
+  });
 });
